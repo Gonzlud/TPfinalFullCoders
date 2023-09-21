@@ -5,7 +5,7 @@ Algoritmo BuscadorTrabajadoresOficio
 	Dimension codigoPostal[4]
 	Dimension contacto[4]
 	Definir i,cantidadPrestadores Como Entero
-	Definir usuario,contrasena,codigoPostalBusqueda,seleccionOficio Como Caracter
+	Definir usuario,contrasena,codigoPostalBusqueda, seleccionOficio Como Caracter
 	Definir prestadoresEncontrados Como Logico // Variable para rastrear si se encontraron prestadores
 	
 	// Ingresar usuario y contraseña
@@ -40,29 +40,29 @@ Algoritmo BuscadorTrabajadoresOficio
 		contacto[4] <- '555-555-555'
 
 		// Pedir al usuario que ingrese un código postal
-		Escribir 'Ingrese el código postal:'
+		Escribir 'Ingrese el código postal (1000,2000 o 3000):'
 		Leer codigoPostalBusqueda
 
 		// Pedir al usuario que seleccione un oficio
-		Escribir cadenilla
-		Escribir 'Seleccione un oficio:'
-		Escribir '1. Servicios Generales'
-		Escribir '2. Carpinteria'
-		Escribir '3. Jardineria'
-		Escribir '4. Electricidad'
-		Escribir '5. Plomeria'
-		Escribir '6. Cerrajeria'
-		Escribir cadenilla
+		Escribir '**********************************************************'
+		Escribir 'Seleccione un oficio (por favor escriba la palabra entera):'
+		Escribir 'Servicios Generales'
+		Escribir 'Carpinteria'
+		Escribir 'Jardineria'
+		Escribir 'Electricidad'
+		Escribir 'Plomeria'
+		Escribir 'Cerrajeria'
+		Escribir '***********************************************************'
 		Leer seleccionOficio
-
+		
 		// Buscar prestadores de servicios por código postal
 		Para i<-1 Hasta cantidadPrestadores Hacer
-			Si codigoPostal[i]=codigoPostalBusqueda Entonces
-				Si prestadoresEncontrados=Verdadero Entonces // Se encontraron prestadores
-					Escribir 'Nombre: ',nombre[i]
-					Escribir 'Oficio: ',oficio[i]
-					Escribir 'Contacto: ',contacto[i]
-				FinSi
+			Si codigoPostal[i]=codigoPostalBusqueda y oficio[i]=seleccionOficio Entonces
+				Escribir 'Nombre: ',nombre[i]
+				Escribir 'Oficio: ',oficio[i]
+				Escribir 'Contacto: ',contacto[i]
+				prestadoresEncontrados = Verdadero  // Se encontraron prestadores
+				
 			FinSi
 		FinPara
 
