@@ -7,12 +7,12 @@ Algoritmo BuscarPorCodigoPostalYOficioConLogin
 	Definir i,cantidadPrestadores Como Entero
 	Definir usuario,contrasena,codigoPostalBusqueda,seleccionOficio Como Caracter
 	Definir prestadoresEncontrados Como Logico // Variable para rastrear si se encontraron prestadores
-	// Ingresar usuario y contrase馻
+	// Ingresar usuario y contrase帽a
 	Escribir 'Ingrese su usuario:'
 	Leer usuario
-	Escribir 'Ingrese su contrase馻:'
+	Escribir 'Ingrese su contrase帽a:'
 	Leer contrasena
-	// Validar usuario y contrase馻 (en una aplicaci髇 real, esto se har韆 con un sistema de autenticaci髇 seguro)
+	// Validar usuario y contrase帽a (en una aplicaci贸n real, esto se har铆a con un sistema de autenticaci贸n seguro)
 	Si usuario='usuario' Y contrasena='contrasena' Entonces
 		cantidadPrestadores <- 3 // Supongamos que hay 3 prestadores de servicios
 		// ingresar datos de prestadores de servicios
@@ -26,10 +26,14 @@ Algoritmo BuscarPorCodigoPostalYOficioConLogin
 		contacto[2] <- '987-654-321'
 		nombre[3] <- 'Pedro Rodriguez'
 		oficio[3] <- 'Jardineria'
-		codigoPostal[3] <- '1000'
+		codigoPostal[3] <- '3000'
 		contacto[3] <- '555-555-555'
-		// Pedir al usuario que ingrese un c骴igo postal
-		Escribir 'Ingrese el c骴igo postal:'
+		nombre[4] <- 'Pedro Castro'
+		oficio[4] <- 'Cerrajeria'
+		codigoPostal[4] <- '3000'
+		contacto[4] <- '555-555-555'
+		// Pedir al usuario que ingrese un c贸digo postal
+		Escribir 'Ingrese el c贸digo postal:'
 		Leer codigoPostalBusqueda
 		// Pedir al usuario que seleccione un oficio
 		Escribir cadenilla
@@ -42,7 +46,7 @@ Algoritmo BuscarPorCodigoPostalYOficioConLogin
 		Escribir '6. Cerrajeria'
 		Escribir cadenilla
 		Leer seleccionOficio
-		// Buscar prestadores de servicios por c骴igo postal
+		// Buscar prestadores de servicios por c贸digo postal
 		Para i<-1 Hasta cantidadPrestadores Hacer
 			Si codigoPostal[i]=codigoPostalBusqueda Entonces
 				Si prestadoresEncontrados=Verdadero Entonces // Se encontraron prestadores
@@ -56,8 +60,8 @@ Algoritmo BuscarPorCodigoPostalYOficioConLogin
 		Si prestadoresEncontrados=Falso Entonces
 			Escribir 'No se han encontrado prestadores en su localidad'
 		FinSi
-		// Preguntar si la informaci髇 fue 鷗il
-		Escribir '縁ue 鷗il la informaci髇? (S/N):'
+		// Preguntar si la informaci贸n fue 煤til
+		Escribir '驴Fue 煤til la informaci贸n? (S/N):'
 		Leer respuesta
 		Si respuesta='S' O respuesta='s' Entonces
 			Escribir 'Gracias por utilizar nuestro servicio.'
@@ -65,6 +69,6 @@ Algoritmo BuscarPorCodigoPostalYOficioConLogin
 			Escribir 'Lamentamos no haber podido ayudarle esta vez.'
 		FinSi
 	SiNo
-		Escribir 'Credenciales incorrectas. Por favor, int閚telo de nuevo.'
+		Escribir 'Credenciales incorrectas. Por favor, int茅ntelo de nuevo.'
 	FinSi
 FinAlgoritmo
